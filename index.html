@@ -1,0 +1,41 @@
+<!-- <html>
+    <body>
+    <script>
+        function onbuttonpress()
+        {
+            const parent=document.getElementById("btn");
+            parent.innerHTML.split(" ");
+            let currentvalue=parent.innerHTML.split(" ")[2]
+            let upgradedvalue=parseInt(currentvalue)+1
+            parent.innerHTML="value is "+upgradedvalue;
+        }
+    </script>
+        <button onclick="onbuttonpress()" id="btn">value is 0</button>
+    </body>
+</html> -->
+
+<!-- you have to create counter with help of state and component -->
+
+<html>
+    <body>
+        <div id="btn"></div>
+        <script>
+            let state={
+                counter:0
+            }
+            function onbuttonpress()
+            {
+                state.counter++;
+                buttonrendring()
+            }
+            function buttonrendring(){
+                document.getElementById("btn").innerHTML=""
+                const button=document.createElement("button")
+                button.innerHTML=`counter is ${state.counter}`;
+                button.setAttribute("onclick","onbuttonpress()")
+                document.getElementById("btn").appendChild(button);
+            }
+            buttonrendring();
+        </script>
+    </body>
+</html>
